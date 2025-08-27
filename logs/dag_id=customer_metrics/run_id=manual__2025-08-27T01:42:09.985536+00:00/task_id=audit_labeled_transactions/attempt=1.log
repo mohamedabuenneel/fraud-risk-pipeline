@@ -1,0 +1,157 @@
+[2025-08-27T01:42:51.059+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-27T01:42:51.085+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.audit_labeled_transactions manual__2025-08-27T01:42:09.985536+00:00 [queued]>
+[2025-08-27T01:42:51.098+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.audit_labeled_transactions manual__2025-08-27T01:42:09.985536+00:00 [queued]>
+[2025-08-27T01:42:51.098+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-08-27T01:42:51.116+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonExternalDecoratedOperator): audit_labeled_transactions> on 2025-08-27 01:42:09.985536+00:00
+[2025-08-27T01:42:51.129+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'audit_labeled_transactions', 'manual__2025-08-27T01:42:09.985536+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmp_q4ecfv0']
+[2025-08-27T01:42:51.132+0000] {standard_task_runner.py:105} INFO - Job 34: Subtask audit_labeled_transactions
+[2025-08-27T01:42:51.134+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1193) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-27T01:42:51.135+0000] {standard_task_runner.py:72} INFO - Started process 1198 to run task
+[2025-08-27T01:42:51.185+0000] {task_command.py:467} INFO - Running <TaskInstance: customer_metrics.audit_labeled_transactions manual__2025-08-27T01:42:09.985536+00:00 [running]> on host a94bea4a24e8
+[2025-08-27T01:42:51.274+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='audit_labeled_transactions' AIRFLOW_CTX_EXECUTION_DATE='2025-08-27T01:42:09.985536+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-27T01:42:09.985536+00:00'
+[2025-08-27T01:42:51.278+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-08-27T01:42:51.696+0000] {python.py:1091} WARNING - When checking for Airflow installed in virtual environment got The version of Airflow installed for the /opt/airflow/soda_venv/bin/python (3.0.4) is different than the runtime Airflow version: 2.10.2. Make sure your environment has the same Airflow version installed as the Airflow runtime.
+[2025-08-27T01:42:51.697+0000] {python.py:1092} WARNING - This means that Airflow is not properly installed by /opt/airflow/soda_venv/bin/python. Airflow context keys will not be available. Please Install Airflow 2.10.2 in your environment to access them.
+[2025-08-27T01:42:51.988+0000] {process_utils.py:186} INFO - Executing cmd: /opt/airflow/soda_venv/bin/python /tmp/venv-callbazzujcv/script.py /tmp/venv-callbazzujcv/script.in /tmp/venv-callbazzujcv/script.out /tmp/venv-callbazzujcv/string_args.txt /tmp/venv-callbazzujcv/termination.log
+[2025-08-27T01:42:51.989+0000] {process_utils.py:190} INFO - Output:
+[2025-08-27T01:42:52.787+0000] {process_utils.py:194} INFO - /opt/airflow/soda_venv/lib/python3.12/site-packages/airflow/configuration.py:2261 FutureWarning: The 'log_filename_template' setting in [logging] has the old default value of 'dag_id={{ ti.dag_id }}/run_id={{ ti.run_id }}/task_id={{ ti.task_id }}/{% if ti.map_index >= 0 %}map_index={{ ti.map_index }}/{% endif %}attempt={{ try_number }}.log'. This value has been changed to 'dag_id={{ ti.dag_id }}/run_id={{ ti.run_id }}/task_id={{ ti.task_id }}/{% if ti.map_index >= 0 %}map_index={{ ti.map_index }}/{% endif %}attempt={{ try_number|default(ti.try_number) }}.log' in the running config, but please update your config.
+[2025-08-27T01:42:53.133+0000] {process_utils.py:194} INFO - [2025-08-27T01:42:53.133+0000] {soda_telemetry.py:61} INFO - Setting up usage telemetry.
+[2025-08-27T01:42:53.147+0000] {process_utils.py:194} INFO - Running Soda Scan ...
+[2025-08-27T01:42:53.147+0000] {process_utils.py:194} INFO - [2025-08-27T01:42:53.147+0000] {log.py:101} INFO - [01:42:53] Soda Core 3.5.5
+[2025-08-27T01:42:53.866+0000] {process_utils.py:194} INFO - [2025-08-27T01:42:53.865+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.17.2, Python Version: 3.12.6, Platform: Linux-6.14.0-28-generic-x86_64-with-glibc2.36
+[2025-08-27T01:42:53.866+0000] {process_utils.py:194} INFO - [2025-08-27T01:42:53.866+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-08-27T01:43:00.194+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.192+0000] {log.py:101} INFO - [01:43:00] Scan summary:
+[2025-08-27T01:43:00.195+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.194+0000] {log.py:101} INFO - [01:43:00] 13/13 checks PASSED:
+[2025-08-27T01:43:00.196+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.195+0000] {log.py:101} INFO - [01:43:00]     customer_transactions in staging
+[2025-08-27T01:43:00.198+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.196+0000] {log.py:101} INFO - [01:43:00]       Table is not empty [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.199+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.197+0000] {log.py:101} INFO - [01:43:00]         check_value: 351
+[2025-08-27T01:43:00.200+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.198+0000] {log.py:101} INFO - [01:43:00]       Schema Check [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.201+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.199+0000] {log.py:101} INFO - [01:43:00]         schema_measured = [_AIRBYTE_RAW_ID TEXT, _AIRBYTE_EXTRACTED_AT TIMESTAMP_TZ, _AIRBYTE_META VARIANT, AMOUNT FLOAT, USER_ID NUMBER, TRANSACTION_ID NUMBER, TRANSACTION_DATE TEXT, _AB_SOURCE_FILE_URL TEXT, _AB_SOURCE_FILE_LAST_MODIFIED TEXT]
+[2025-08-27T01:43:00.202+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.200+0000] {log.py:101} INFO - [01:43:00]       No duplicate transaction IDs [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.204+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.201+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.205+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.203+0000] {log.py:101} INFO - [01:43:00]       Transaction IDs cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.206+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.204+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.207+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.205+0000] {log.py:101} INFO - [01:43:00]       User IDs cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.208+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.206+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.209+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.207+0000] {log.py:101} INFO - [01:43:00]       Transaction dates cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.210+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.208+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.211+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.209+0000] {log.py:101} INFO - [01:43:00]       Amounts cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.212+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.210+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.213+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.211+0000] {log.py:101} INFO - [01:43:00]     labeled_transactions in staging
+[2025-08-27T01:43:00.214+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.212+0000] {log.py:101} INFO - [01:43:00]       Table is empty [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.215+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.213+0000] {log.py:101} INFO - [01:43:00]         check_value: 351
+[2025-08-27T01:43:00.217+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.214+0000] {log.py:101} INFO - [01:43:00]       Schema Check [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.219+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.215+0000] {log.py:101} INFO - [01:43:00]         schema_measured = [_AIRBYTE_RAW_ID TEXT, _AIRBYTE_EXTRACTED_AT TIMESTAMP_TZ, _AIRBYTE_META VARIANT, IS_FRAUDULENT BOOLEAN, TRANSACTION_ID NUMBER, _AB_SOURCE_FILE_URL TEXT, _AB_SOURCE_FILE_LAST_MODIFIED TEXT]
+[2025-08-27T01:43:00.220+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.216+0000] {log.py:101} INFO - [01:43:00]       Transaction IDS dont match with the refenerce table [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.221+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.218+0000] {log.py:101} INFO - [01:43:00]         value: 0
+[2025-08-27T01:43:00.222+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.219+0000] {log.py:101} INFO - [01:43:00]       duplicate transaction ids [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.223+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.220+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.225+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.220+0000] {log.py:101} INFO - [01:43:00]       transaction ids cannot be null [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.226+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.221+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.227+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.222+0000] {log.py:101} INFO - [01:43:00]       Is fraudulent values cannot be null [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.228+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.223+0000] {log.py:101} INFO - [01:43:00]         check_value: 0
+[2025-08-27T01:43:00.229+0000] {process_utils.py:194} INFO - [2025-08-27T01:43:00.224+0000] {log.py:101} INFO - [01:43:00] All is good. No failures. No warnings. No errors.
+[2025-08-27T01:43:00.271+0000] {process_utils.py:194} INFO - INFO   | Soda Core 3.5.5
+[2025-08-27T01:43:00.273+0000] {process_utils.py:194} INFO - DEBUG  | Reading configuration file "include/soda/configuration.yml"
+[2025-08-27T01:43:00.274+0000] {process_utils.py:194} INFO - DEBUG  | Reading SodaCL file "include/soda/checks/tables/customer_transactions.yml"
+[2025-08-27T01:43:00.275+0000] {process_utils.py:194} INFO - DEBUG  | Reading SodaCL file "include/soda/checks/tables/labeled_transactions.yml"
+[2025-08-27T01:43:00.276+0000] {process_utils.py:194} INFO - DEBUG  | Scan execution starts
+[2025-08-27T01:43:00.277+0000] {process_utils.py:194} INFO - DEBUG  | Query 1.staging.customer_transactions.aggregation[0]:
+[2025-08-27T01:43:00.278+0000] {process_utils.py:194} INFO - SELECT
+[2025-08-27T01:43:00.279+0000] {process_utils.py:194} INFO -   COUNT(*),
+[2025-08-27T01:43:00.281+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN transaction_id IS NULL THEN 1 END),
+[2025-08-27T01:43:00.282+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN user_id IS NULL THEN 1 END),
+[2025-08-27T01:43:00.283+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN transaction_date IS NULL THEN 1 END),
+[2025-08-27T01:43:00.284+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN amount IS NULL THEN 1 END)
+[2025-08-27T01:43:00.285+0000] {process_utils.py:194} INFO - FROM AIRBYTE_DATABASE.STAGING.customer_transactions
+[2025-08-27T01:43:00.287+0000] {process_utils.py:194} INFO - DEBUG  | Query 3.staging.customer_transactions.transaction_id.duplicate_count:
+[2025-08-27T01:43:00.287+0000] {process_utils.py:194} INFO - 
+[2025-08-27T01:43:00.288+0000] {process_utils.py:194} INFO - WITH frequencies AS (
+[2025-08-27T01:43:00.289+0000] {process_utils.py:194} INFO -     SELECT COUNT(*) AS frequency
+[2025-08-27T01:43:00.290+0000] {process_utils.py:194} INFO -     FROM AIRBYTE_DATABASE.STAGING.customer_transactions
+[2025-08-27T01:43:00.290+0000] {process_utils.py:194} INFO -     WHERE transaction_id IS NOT NULL
+[2025-08-27T01:43:00.291+0000] {process_utils.py:194} INFO -     GROUP BY transaction_id)
+[2025-08-27T01:43:00.292+0000] {process_utils.py:194} INFO - SELECT COUNT(*)
+[2025-08-27T01:43:00.293+0000] {process_utils.py:194} INFO - FROM frequencies
+[2025-08-27T01:43:00.293+0000] {process_utils.py:194} INFO - WHERE frequency > 1
+[2025-08-27T01:43:00.294+0000] {process_utils.py:194} INFO - DEBUG  | Query 4.staging.labeled_transactions.aggregation[0]:
+[2025-08-27T01:43:00.295+0000] {process_utils.py:194} INFO - SELECT
+[2025-08-27T01:43:00.295+0000] {process_utils.py:194} INFO -   COUNT(*),
+[2025-08-27T01:43:00.296+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN transaction_id IS NULL THEN 1 END),
+[2025-08-27T01:43:00.297+0000] {process_utils.py:194} INFO -   COUNT(CASE WHEN is_fraudulent IS NULL THEN 1 END)
+[2025-08-27T01:43:00.297+0000] {process_utils.py:194} INFO - FROM AIRBYTE_DATABASE.STAGING.labeled_transactions
+[2025-08-27T01:43:00.298+0000] {process_utils.py:194} INFO - DEBUG  | Query 7.staging.labeled_transactions.transaction_id.duplicate_count:
+[2025-08-27T01:43:00.298+0000] {process_utils.py:194} INFO - 
+[2025-08-27T01:43:00.299+0000] {process_utils.py:194} INFO - WITH frequencies AS (
+[2025-08-27T01:43:00.299+0000] {process_utils.py:194} INFO -     SELECT COUNT(*) AS frequency
+[2025-08-27T01:43:00.300+0000] {process_utils.py:194} INFO -     FROM AIRBYTE_DATABASE.STAGING.labeled_transactions
+[2025-08-27T01:43:00.300+0000] {process_utils.py:194} INFO -     WHERE transaction_id IS NOT NULL
+[2025-08-27T01:43:00.301+0000] {process_utils.py:194} INFO -     GROUP BY transaction_id)
+[2025-08-27T01:43:00.301+0000] {process_utils.py:194} INFO - SELECT COUNT(*)
+[2025-08-27T01:43:00.302+0000] {process_utils.py:194} INFO - FROM frequencies
+[2025-08-27T01:43:00.302+0000] {process_utils.py:194} INFO - WHERE frequency > 1
+[2025-08-27T01:43:00.303+0000] {process_utils.py:194} INFO - DEBUG  | Query 2.staging.customer_transactions.schema[customer_transactions]:
+[2025-08-27T01:43:00.304+0000] {process_utils.py:194} INFO - SELECT column_name, data_type, is_nullable
+[2025-08-27T01:43:00.304+0000] {process_utils.py:194} INFO - FROM information_schema.columns
+[2025-08-27T01:43:00.304+0000] {process_utils.py:194} INFO - WHERE upper(table_name) = 'CUSTOMER_TRANSACTIONS'
+[2025-08-27T01:43:00.305+0000] {process_utils.py:194} INFO -   AND upper(table_catalog) = 'AIRBYTE_DATABASE'
+[2025-08-27T01:43:00.306+0000] {process_utils.py:194} INFO -   AND upper(table_schema) = 'STAGING'
+[2025-08-27T01:43:00.306+0000] {process_utils.py:194} INFO - ORDER BY ORDINAL_POSITION
+[2025-08-27T01:43:00.306+0000] {process_utils.py:194} INFO - DEBUG  | Query 5.staging.labeled_transactions.schema[labeled_transactions]:
+[2025-08-27T01:43:00.307+0000] {process_utils.py:194} INFO - SELECT column_name, data_type, is_nullable
+[2025-08-27T01:43:00.307+0000] {process_utils.py:194} INFO - FROM information_schema.columns
+[2025-08-27T01:43:00.308+0000] {process_utils.py:194} INFO - WHERE upper(table_name) = 'LABELED_TRANSACTIONS'
+[2025-08-27T01:43:00.308+0000] {process_utils.py:194} INFO -   AND upper(table_catalog) = 'AIRBYTE_DATABASE'
+[2025-08-27T01:43:00.308+0000] {process_utils.py:194} INFO -   AND upper(table_schema) = 'STAGING'
+[2025-08-27T01:43:00.309+0000] {process_utils.py:194} INFO - ORDER BY ORDINAL_POSITION
+[2025-08-27T01:43:00.309+0000] {process_utils.py:194} INFO - DEBUG  | Query 6.staging.labeled_transactions.reference[transaction_id]:
+[2025-08-27T01:43:00.310+0000] {process_utils.py:194} INFO - 
+[2025-08-27T01:43:00.310+0000] {process_utils.py:194} INFO - SELECT COUNT(*)
+[2025-08-27T01:43:00.310+0000] {process_utils.py:194} INFO -     FROM AIRBYTE_DATABASE.STAGING.labeled_transactions  SOURCE
+[2025-08-27T01:43:00.311+0000] {process_utils.py:194} INFO -     LEFT JOIN AIRBYTE_DATABASE.STAGING.customer_transactions TARGET on SOURCE.transaction_id = TARGET.transaction_id
+[2025-08-27T01:43:00.311+0000] {process_utils.py:194} INFO - WHERE (SOURCE.transaction_id IS NOT NULL AND TARGET.transaction_id IS  NULL)
+[2025-08-27T01:43:00.312+0000] {process_utils.py:194} INFO - INFO   | Scan summary:
+[2025-08-27T01:43:00.312+0000] {process_utils.py:194} INFO - DEBUG  | 7/7 queries OK
+[2025-08-27T01:43:00.313+0000] {process_utils.py:194} INFO - DEBUG  |   1.staging.customer_transactions.aggregation[0] [OK] 0:00:00.131434
+[2025-08-27T01:43:00.313+0000] {process_utils.py:194} INFO - DEBUG  |   3.staging.customer_transactions.transaction_id.duplicate_count [OK] 0:00:00.159685
+[2025-08-27T01:43:00.314+0000] {process_utils.py:194} INFO - DEBUG  |   4.staging.labeled_transactions.aggregation[0] [OK] 0:00:00.142619
+[2025-08-27T01:43:00.314+0000] {process_utils.py:194} INFO - DEBUG  |   7.staging.labeled_transactions.transaction_id.duplicate_count [OK] 0:00:00.162200
+[2025-08-27T01:43:00.315+0000] {process_utils.py:194} INFO - DEBUG  |   2.staging.customer_transactions.schema[customer_transactions] [OK] 0:00:01.010624
+[2025-08-27T01:43:00.315+0000] {process_utils.py:194} INFO - DEBUG  |   5.staging.labeled_transactions.schema[labeled_transactions] [OK] 0:00:00.921311
+[2025-08-27T01:43:00.316+0000] {process_utils.py:194} INFO - DEBUG  |   6.staging.labeled_transactions.reference[transaction_id] [OK] 0:00:00.409380
+[2025-08-27T01:43:00.316+0000] {process_utils.py:194} INFO - INFO   | 13/13 checks PASSED:
+[2025-08-27T01:43:00.316+0000] {process_utils.py:194} INFO - INFO   |     customer_transactions in staging
+[2025-08-27T01:43:00.317+0000] {process_utils.py:194} INFO - INFO   |       Table is not empty [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.317+0000] {process_utils.py:194} INFO - INFO   |         check_value: 351
+[2025-08-27T01:43:00.318+0000] {process_utils.py:194} INFO - INFO   |       Schema Check [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.319+0000] {process_utils.py:194} INFO - INFO   |         schema_measured = [_AIRBYTE_RAW_ID TEXT, _AIRBYTE_EXTRACTED_AT TIMESTAMP_TZ, _AIRBYTE_META VARIANT, AMOUNT FLOAT, USER_ID NUMBER, TRANSACTION_ID NUMBER, TRANSACTION_DATE TEXT, _AB_SOURCE_FILE_URL TEXT, _AB_SOURCE_FILE_LAST_MODIFIED TEXT]
+[2025-08-27T01:43:00.319+0000] {process_utils.py:194} INFO - INFO   |       No duplicate transaction IDs [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.320+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.320+0000] {process_utils.py:194} INFO - INFO   |       Transaction IDs cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.321+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.321+0000] {process_utils.py:194} INFO - INFO   |       User IDs cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.321+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.322+0000] {process_utils.py:194} INFO - INFO   |       Transaction dates cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.322+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.323+0000] {process_utils.py:194} INFO - INFO   |       Amounts cannot be null [include/soda/checks/tables/customer_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.323+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.323+0000] {process_utils.py:194} INFO - INFO   |     labeled_transactions in staging
+[2025-08-27T01:43:00.324+0000] {process_utils.py:194} INFO - INFO   |       Table is empty [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.324+0000] {process_utils.py:194} INFO - INFO   |         check_value: 351
+[2025-08-27T01:43:00.325+0000] {process_utils.py:194} INFO - INFO   |       Schema Check [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.325+0000] {process_utils.py:194} INFO - INFO   |         schema_measured = [_AIRBYTE_RAW_ID TEXT, _AIRBYTE_EXTRACTED_AT TIMESTAMP_TZ, _AIRBYTE_META VARIANT, IS_FRAUDULENT BOOLEAN, TRANSACTION_ID NUMBER, _AB_SOURCE_FILE_URL TEXT, _AB_SOURCE_FILE_LAST_MODIFIED TEXT]
+[2025-08-27T01:43:00.326+0000] {process_utils.py:194} INFO - INFO   |       Transaction IDS dont match with the refenerce table [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.327+0000] {process_utils.py:194} INFO - INFO   |         value: 0
+[2025-08-27T01:43:00.327+0000] {process_utils.py:194} INFO - INFO   |       duplicate transaction ids [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.327+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.328+0000] {process_utils.py:194} INFO - INFO   |       transaction ids cannot be null [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.328+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.329+0000] {process_utils.py:194} INFO - INFO   |       Is fraudulent values cannot be null [include/soda/checks/tables/labeled_transactions.yml] [PASSED]
+[2025-08-27T01:43:00.329+0000] {process_utils.py:194} INFO - INFO   |         check_value: 0
+[2025-08-27T01:43:00.330+0000] {process_utils.py:194} INFO - INFO   | All is good. No failures. No warnings. No errors.
+[2025-08-27T01:43:00.773+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-08-27T01:43:00.782+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-08-27T01:43:00.782+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=audit_labeled_transactions, run_id=manual__2025-08-27T01:42:09.985536+00:00, execution_date=20250827T014209, start_date=20250827T014251, end_date=20250827T014300
+[2025-08-27T01:43:00.805+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-27T01:43:00.826+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T01:43:00.827+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

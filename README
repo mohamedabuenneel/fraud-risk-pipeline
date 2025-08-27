@@ -1,0 +1,56 @@
+# Fraud Risk Data Pipeline with Airbyte, Snowflake, dbt, Airflow, and Soda
+
+## 📌 Project Overview
+This project implements an end-to-end **fraud risk data pipeline** that consolidates customer transactions and fraud detection results from multiple sources, performs **data quality checks**, and publishes **customer risk metrics** to Snowflake for dashboarding.  
+
+The goal is to showcase how modern data engineering tools can be combined to build reliable, auditable, and production-ready pipelines.
+
+---
+
+## 🏗️ Architecture
+
+![Pipeline Architecture](./assets/architecture.png)
+
+**Workflow**
+1. **Data Generation**  
+   - Simulated Python scripts generate `customer_transactions` (Postgres) and `labeled_transactions` (MySQL).  
+2. **Ingestion with Airbyte**  
+   - Airbyte extracts data from Postgres & MySQL and loads into S3.  
+   - Data is then written into Snowflake (raw + staging).  
+3. **Data Quality with Soda**  
+   - Soda validates transaction and fraud detection data before publishing.  
+4. **Transform & Publish with dbt**  
+   - dbt models create the `customer_metrics` table, including risk scores.  
+5. **Orchestration with Airflow**  
+   - Airflow orchestrates the entire workflow using the **Write → Audit → Publish** pattern.  
+6. **Consumption**  
+   - Final customer metrics are made available for dashboards (BI layer).
+
+---
+
+## ⚙️ Tech Stack
+- **Airflow** – workflow orchestration (daily DAGs)  
+- **Airbyte** – ELT ingestion from Postgres & MySQL → S3 → Snowflake  
+- **Snowflake** – cloud data warehouse (staging & analytics)  
+- **dbt** – transformations & metric publishing  
+- **Soda** – data quality checks on staging data  
+- **Python** – data generators (transactions & fraud labels)
+
+---
+
+## 📊 Data Flow
+1. **Generate Data** → Python scripts simulate customer & fraud transactions.  
+2. **Extract & Load** → Airbyte syncs raw data into S3.  
+3. **Write to Warehouse** → Airbyte loads into Snowflake staging.  
+4. **Audit** → Soda scans enforce data quality.  
+5. **Publish** → dbt transforms staging into analytics tables (`customer_metrics`).  
+6. **Consume** → BI dashboards display fraud risk scores.
+
+---
+
+## 🚀 How to Run
+1. **Clone repo**
+   ```bash
+   git clone https://github.com/mohamedabuenneel/fraud-risk-pipeline.git
+   cd fraud-risk-pipeline
+

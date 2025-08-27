@@ -1,0 +1,151 @@
+[2025-08-27T01:37:22.254+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-27T01:37:22.275+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:37:22.286+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:37:22.286+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-08-27T01:37:22.302+0000] {taskinstance.py:2888} INFO - Executing <Task(DbtRunLocalOperator): publish.customer_metrics_run> on 2025-08-26 00:00:00+00:00
+[2025-08-27T01:37:22.313+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'publish.customer_metrics_run', 'scheduled__2025-08-26T00:00:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmpvkc4ej_e']
+[2025-08-27T01:37:22.315+0000] {standard_task_runner.py:105} INFO - Job 28: Subtask publish.customer_metrics_run
+[2025-08-27T01:37:22.317+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=934) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-27T01:37:22.318+0000] {standard_task_runner.py:72} INFO - Started process 942 to run task
+[2025-08-27T01:37:22.398+0000] {task_command.py:467} INFO - Running <TaskInstance: customer_metrics.publish.customer_metrics_run scheduled__2025-08-26T00:00:00+00:00 [running]> on host a94bea4a24e8
+[2025-08-27T01:37:22.760+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='publish.customer_metrics_run' AIRFLOW_CTX_EXECUTION_DATE='2025-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-26T00:00:00+00:00'
+[2025-08-27T01:37:22.766+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-08-27T01:37:24.311+0000] {local.py:244} INFO - dbtRunner is available. Using dbtRunner for invoking dbt.
+[2025-08-27T01:37:24.311+0000] {local.py:470} INFO - Cloning project to writable temp directory /tmp/tmpx13lq5zm from /opt/airflow/include/dbt/fraud
+[2025-08-27T01:37:24.312+0000] {local.py:490} INFO - Partial parse is enabled and the latest partial parse file is /tmp/cosmos/customer_metrics__publish/target/partial_parse.msgpack
+[2025-08-27T01:37:24.320+0000] {config.py:362} INFO - Using user-supplied profiles.yml at /opt/airflow/include/dbt/fraud/profiles.yml
+[2025-08-27T01:37:24.320+0000] {runner.py:60} INFO - Trying to run dbtRunner with:
+ ['run', '--models', 'customer_metrics', '--project-dir', '/tmp/tmpx13lq5zm', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev', '--no-static-parser']
+ in /tmp/tmpx13lq5zm
+[2025-08-27T01:37:24.384+0000] {logging_mixin.py:190} INFO - 01:37:24  Running with dbt=1.10.9
+[2025-08-27T01:37:24.386+0000] {logging_mixin.py:190} INFO - 01:37:24  [WARNING]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of `--select` or
+`-s`.
+[2025-08-27T01:37:25.089+0000] {logging_mixin.py:190} INFO - 01:37:25  Registered adapter: snowflake=1.10.0
+[2025-08-27T01:37:25.695+0000] {logging_mixin.py:190} INFO - 01:37:25  Found 3 models, 477 macros
+[2025-08-27T01:37:25.697+0000] {logging_mixin.py:190} INFO - 01:37:25
+[2025-08-27T01:37:25.698+0000] {logging_mixin.py:190} INFO - 01:37:25  Concurrency: 1 threads (target='dev')
+[2025-08-27T01:37:25.698+0000] {logging_mixin.py:190} INFO - 01:37:25
+[2025-08-27T01:37:25.731+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.17.2, Python Version: 3.12.6, Platform: Linux-6.14.0-28-generic-x86_64-with-glibc2.36
+[2025-08-27T01:37:25.731+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-08-27T01:37:29.343+0000] {logging_mixin.py:190} INFO - 01:37:29  1 of 1 START sql table model prod.customer_metrics ............................. [RUN]
+[2025-08-27T01:37:29.592+0000] {logging_mixin.py:190} INFO - 01:37:29  1 of 1 ERROR creating sql table model prod.customer_metrics .................... [ERROR in 0.24s]
+[2025-08-27T01:37:29.811+0000] {logging_mixin.py:190} INFO - 01:37:29
+[2025-08-27T01:37:29.814+0000] {logging_mixin.py:190} INFO - 01:37:29  Finished running 1 table model in 0 hours 0 minutes and 4.11 seconds (4.11s).
+[2025-08-27T01:37:29.947+0000] {logging_mixin.py:190} INFO - 01:37:29
+[2025-08-27T01:37:29.951+0000] {logging_mixin.py:190} INFO - 01:37:29  Completed with 1 error, 0 partial successes, and 0 warnings:
+[2025-08-27T01:37:29.954+0000] {logging_mixin.py:190} INFO - 01:37:29
+[2025-08-27T01:37:29.957+0000] {logging_mixin.py:190} INFO - 01:37:29  Failure in model customer_metrics (models/customer_metrics.sql)
+[2025-08-27T01:37:29.960+0000] {logging_mixin.py:190} INFO - 01:37:29    Database Error in model customer_metrics (models/customer_metrics.sql)
+  001003 (42000): 01bea3c1-0105-186f-0003-d9020006b0e2: SQL compilation error:
+  syntax error line 24 at position 135 unexpected ';'.
+  compiled code at target/run/fraud/models/customer_metrics.sql
+[2025-08-27T01:37:29.963+0000] {logging_mixin.py:190} INFO - 01:37:29
+[2025-08-27T01:37:29.966+0000] {logging_mixin.py:190} INFO - 01:37:29    compiled code at target/compiled/fraud/models/customer_metrics.sql
+[2025-08-27T01:37:29.969+0000] {logging_mixin.py:190} INFO - 01:37:29
+[2025-08-27T01:37:29.972+0000] {logging_mixin.py:190} INFO - 01:37:29  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[2025-08-27T01:37:29.975+0000] {logging_mixin.py:190} INFO - 01:37:29  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[2025-08-27T01:37:30.724+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2025-08-27T01:37:30.737+0000] {local.py:547} INFO - Inlets: []
+[2025-08-27T01:37:30.737+0000] {local.py:548} INFO - Outlets: []
+[2025-08-27T01:37:30.738+0000] {local.py:786} INFO - Assigning inlets/outlets with DatasetAlias in Airflow 2
+[2025-08-27T01:37:30.785+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/base.py", line 310, in execute
+    self.build_and_run_cmd(context=context, cmd_flags=self.add_cmd_flags())
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 853, in build_and_run_cmd
+    result = self.run_command(
+             ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 650, in run_command
+    self.handle_exception(result)
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 258, in handle_exception_dbt_runner
+    return dbt_runner.handle_exception_if_needed(result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/dbt/runner.py", line 113, in handle_exception_if_needed
+    raise CosmosDbtRunError(f"dbt invocation completed with errors: {error_message}")
+cosmos.exceptions.CosmosDbtRunError: dbt invocation completed with errors: customer_metrics: Database Error in model customer_metrics (models/customer_metrics.sql)
+  001003 (42000): 01bea3c1-0105-186f-0003-d9020006b0e2: SQL compilation error:
+  syntax error line 24 at position 135 unexpected ';'.
+  compiled code at target/run/fraud/models/customer_metrics.sql
+[2025-08-27T01:37:30.816+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=customer_metrics, task_id=publish.customer_metrics_run, run_id=scheduled__2025-08-26T00:00:00+00:00, execution_date=20250826T000000, start_date=20250827T013722, end_date=20250827T013730
+[2025-08-27T01:37:30.857+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-08-27T01:37:30.858+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 28 for task publish.customer_metrics_run (dbt invocation completed with errors: customer_metrics: Database Error in model customer_metrics (models/customer_metrics.sql)
+  001003 (42000): 01bea3c1-0105-186f-0003-d9020006b0e2: SQL compilation error:
+  syntax error line 24 at position 135 unexpected ';'.
+  compiled code at target/run/fraud/models/customer_metrics.sql; 942)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/base.py", line 310, in execute
+    self.build_and_run_cmd(context=context, cmd_flags=self.add_cmd_flags())
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 853, in build_and_run_cmd
+    result = self.run_command(
+             ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 650, in run_command
+    self.handle_exception(result)
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/operators/local.py", line 258, in handle_exception_dbt_runner
+    return dbt_runner.handle_exception_if_needed(result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/cosmos/dbt/runner.py", line 113, in handle_exception_if_needed
+    raise CosmosDbtRunError(f"dbt invocation completed with errors: {error_message}")
+cosmos.exceptions.CosmosDbtRunError: dbt invocation completed with errors: customer_metrics: Database Error in model customer_metrics (models/customer_metrics.sql)
+  001003 (42000): 01bea3c1-0105-186f-0003-d9020006b0e2: SQL compilation error:
+  syntax error line 24 at position 135 unexpected ';'.
+  compiled code at target/run/fraud/models/customer_metrics.sql
+[2025-08-27T01:37:30.933+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-08-27T01:37:31.003+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T01:37:31.005+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

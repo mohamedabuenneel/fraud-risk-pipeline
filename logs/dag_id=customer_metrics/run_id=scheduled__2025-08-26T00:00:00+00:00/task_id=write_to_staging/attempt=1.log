@@ -1,0 +1,29 @@
+[2025-08-27T01:36:37.687+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-27T01:36:37.706+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.write_to_staging scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:36:37.716+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.write_to_staging scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:36:37.716+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-08-27T01:36:37.732+0000] {taskinstance.py:2888} INFO - Executing <Task(AirbyteTriggerSyncOperator): write_to_staging> on 2025-08-26 00:00:00+00:00
+[2025-08-27T01:36:37.748+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'write_to_staging', 'scheduled__2025-08-26T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmpqb8rta8h']
+[2025-08-27T01:36:37.751+0000] {standard_task_runner.py:105} INFO - Job 21: Subtask write_to_staging
+[2025-08-27T01:36:37.755+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=830) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-27T01:36:37.756+0000] {standard_task_runner.py:72} INFO - Started process 832 to run task
+[2025-08-27T01:36:37.901+0000] {task_command.py:467} INFO - Running <TaskInstance: customer_metrics.write_to_staging scheduled__2025-08-26T00:00:00+00:00 [running]> on host a94bea4a24e8
+[2025-08-27T01:36:38.234+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='write_to_staging' AIRFLOW_CTX_EXECUTION_DATE='2025-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-26T00:00:00+00:00'
+[2025-08-27T01:36:38.240+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-08-27T01:36:38.278+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:38.640+0000] {airbyte.py:95} INFO - Job 6 was submitted to Airbyte Server
+[2025-08-27T01:36:38.640+0000] {airbyte.py:97} INFO - Waiting for job 6 to complete
+[2025-08-27T01:36:41.649+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:44.691+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:47.776+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:50.837+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:53.877+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:56.962+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:37:00.064+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:37:03.128+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:37:03.144+0000] {airbyte.py:124} INFO - Job 6 completed successfully
+[2025-08-27T01:37:03.172+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-08-27T01:37:03.173+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=write_to_staging, run_id=scheduled__2025-08-26T00:00:00+00:00, execution_date=20250826T000000, start_date=20250827T013637, end_date=20250827T013703
+[2025-08-27T01:37:03.208+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-27T01:37:03.241+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T01:37:03.242+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

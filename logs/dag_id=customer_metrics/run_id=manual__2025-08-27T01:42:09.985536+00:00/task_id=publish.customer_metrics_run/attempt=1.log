@@ -1,0 +1,64 @@
+[2025-08-27T01:43:05.538+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-27T01:43:05.608+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run manual__2025-08-27T01:42:09.985536+00:00 [queued]>
+[2025-08-27T01:43:05.646+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.publish.customer_metrics_run manual__2025-08-27T01:42:09.985536+00:00 [queued]>
+[2025-08-27T01:43:05.647+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-08-27T01:43:05.694+0000] {taskinstance.py:2888} INFO - Executing <Task(DbtRunLocalOperator): publish.customer_metrics_run> on 2025-08-27 01:42:09.985536+00:00
+[2025-08-27T01:43:05.731+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'publish.customer_metrics_run', 'manual__2025-08-27T01:42:09.985536+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmprscltryf']
+[2025-08-27T01:43:05.737+0000] {standard_task_runner.py:105} INFO - Job 38: Subtask publish.customer_metrics_run
+[2025-08-27T01:43:05.747+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1275) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-27T01:43:05.748+0000] {standard_task_runner.py:72} INFO - Started process 1285 to run task
+[2025-08-27T01:43:05.917+0000] {task_command.py:467} INFO - Running <TaskInstance: customer_metrics.publish.customer_metrics_run manual__2025-08-27T01:42:09.985536+00:00 [running]> on host a94bea4a24e8
+[2025-08-27T01:43:06.217+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='publish.customer_metrics_run' AIRFLOW_CTX_EXECUTION_DATE='2025-08-27T01:42:09.985536+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-27T01:42:09.985536+00:00'
+[2025-08-27T01:43:06.219+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-08-27T01:43:07.617+0000] {local.py:244} INFO - dbtRunner is available. Using dbtRunner for invoking dbt.
+[2025-08-27T01:43:07.617+0000] {local.py:470} INFO - Cloning project to writable temp directory /tmp/tmpu3d1bval from /opt/airflow/include/dbt/fraud
+[2025-08-27T01:43:07.618+0000] {local.py:490} INFO - Partial parse is enabled and the latest partial parse file is /tmp/cosmos/customer_metrics__publish/target/partial_parse.msgpack
+[2025-08-27T01:43:07.622+0000] {config.py:362} INFO - Using user-supplied profiles.yml at /opt/airflow/include/dbt/fraud/profiles.yml
+[2025-08-27T01:43:07.622+0000] {runner.py:60} INFO - Trying to run dbtRunner with:
+ ['run', '--models', 'customer_metrics', '--project-dir', '/tmp/tmpu3d1bval', '--profiles-dir', '/opt/airflow/include/dbt/fraud', '--profile', 'fraud', '--target', 'dev', '--no-static-parser']
+ in /tmp/tmpu3d1bval
+[2025-08-27T01:43:07.686+0000] {logging_mixin.py:190} INFO - 01:43:07  Running with dbt=1.10.9
+[2025-08-27T01:43:07.687+0000] {logging_mixin.py:190} INFO - 01:43:07  [WARNING]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of `--select` or
+`-s`.
+[2025-08-27T01:43:08.328+0000] {logging_mixin.py:190} INFO - 01:43:08  Registered adapter: snowflake=1.10.0
+[2025-08-27T01:43:08.881+0000] {logging_mixin.py:190} INFO - 01:43:08  Found 3 models, 477 macros
+[2025-08-27T01:43:08.883+0000] {logging_mixin.py:190} INFO - 01:43:08
+[2025-08-27T01:43:08.884+0000] {logging_mixin.py:190} INFO - 01:43:08  Concurrency: 1 threads (target='dev')
+[2025-08-27T01:43:08.885+0000] {logging_mixin.py:190} INFO - 01:43:08
+[2025-08-27T01:43:08.913+0000] {connection.py:521} INFO - Snowflake Connector for Python Version: 3.17.2, Python Version: 3.12.6, Platform: Linux-6.14.0-28-generic-x86_64-with-glibc2.36
+[2025-08-27T01:43:08.914+0000] {connection.py:1464} INFO - Connecting to GLOBAL Snowflake domain
+[2025-08-27T01:43:13.818+0000] {logging_mixin.py:190} INFO - 01:43:13  1 of 1 START sql table model prod.customer_metrics ............................. [RUN]
+[2025-08-27T01:43:14.562+0000] {logging_mixin.py:190} INFO - 01:43:14  1 of 1 OK created sql table model prod.customer_metrics ........................ [SUCCESS 1 in 0.74s]
+[2025-08-27T01:43:15.249+0000] {logging_mixin.py:190} INFO - 01:43:15
+[2025-08-27T01:43:15.252+0000] {logging_mixin.py:190} INFO - 01:43:15  Finished running 1 table model in 0 hours 0 minutes and 6.36 seconds (6.36s).
+[2025-08-27T01:43:15.373+0000] {logging_mixin.py:190} INFO - 01:43:15
+[2025-08-27T01:43:15.376+0000] {logging_mixin.py:190} INFO - 01:43:15  Completed successfully
+[2025-08-27T01:43:15.378+0000] {logging_mixin.py:190} INFO - 01:43:15
+[2025-08-27T01:43:15.381+0000] {logging_mixin.py:190} INFO - 01:43:15  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[2025-08-27T01:43:15.386+0000] {logging_mixin.py:190} INFO - 01:43:15  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[2025-08-27T01:43:16.212+0000] {local.py:196} WARNING - Artifact schema version: https://schemas.getdbt.com/dbt/manifest/v12.json is above dbt-ol supported version 7. This might cause errors.
+[2025-08-27T01:43:16.229+0000] {local.py:704} WARNING - 
+                    Airflow 3.0.0 Asset (Dataset) URIs validation rules changed and OpenLineage URIs (standard used by Cosmos) will no longer be valid.
+                    Therefore, if using Cosmos with Airflow 3, the Airflow Dataset URIs will be changed to <snowflake://MSHNSJK-LL22181/AIRBYTE_DATABASE/prod/customer_metrics>.
+                    Previously, with Airflow 2.x, the URI was <snowflake://MSHNSJK-LL22181/AIRBYTE_DATABASE.prod.customer_metrics>.
+                    If you want to use the Airflow 3 URI standard while still using Airflow 2, please, set:
+                        export AIRFLOW__COSMOS__USE_DATASET_AIRFLOW3_URI_STANDARD=1
+                    Remember to update any DAGs that are scheduled using this dataset.
+                    
+[2025-08-27T01:43:16.284+0000] {local.py:547} INFO - Inlets: []
+[2025-08-27T01:43:16.285+0000] {local.py:548} INFO - Outlets: [Dataset(uri='snowflake://MSHNSJK-LL22181/AIRBYTE_DATABASE.prod.customer_metrics', extra=None)]
+[2025-08-27T01:43:16.286+0000] {local.py:786} INFO - Assigning inlets/outlets with DatasetAlias in Airflow 2
+[2025-08-27T01:43:16.379+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-08-27T01:43:16.379+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=publish.customer_metrics_run, run_id=manual__2025-08-27T01:42:09.985536+00:00, execution_date=20250827T014209, start_date=20250827T014305, end_date=20250827T014316
+[2025-08-27T01:43:16.388+0000] {taskinstance.py:3052} WARNING - Created a new DatasetModel(uri='snowflake://MSHNSJK-LL22181/AIRBYTE_DATABASE.prod.customer_metrics', extra={}) as it did not exist.
+[2025-08-27T01:43:16.396+0000] {taskinstance.py:3062} INFO - Creating event for DatasetModel(uri='snowflake://MSHNSJK-LL22181/AIRBYTE_DATABASE.prod.customer_metrics', extra={}) through aliases "customer_metrics__publish__customer_metrics_run"
+[2025-08-27T01:43:16.490+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-27T01:43:16.556+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-27T01:43:16.562+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

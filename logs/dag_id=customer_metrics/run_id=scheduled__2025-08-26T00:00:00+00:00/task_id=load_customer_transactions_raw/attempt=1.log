@@ -1,0 +1,24 @@
+[2025-08-27T01:36:21.206+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-27T01:36:21.224+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_metrics.load_customer_transactions_raw scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:36:21.232+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_metrics.load_customer_transactions_raw scheduled__2025-08-26T00:00:00+00:00 [queued]>
+[2025-08-27T01:36:21.233+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2025-08-27T01:36:21.247+0000] {taskinstance.py:2888} INFO - Executing <Task(AirbyteTriggerSyncOperator): load_customer_transactions_raw> on 2025-08-26 00:00:00+00:00
+[2025-08-27T01:36:21.257+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'customer_metrics', 'load_customer_transactions_raw', 'scheduled__2025-08-26T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/customer_metrics.py', '--cfg-path', '/tmp/tmp2tmybhgf']
+[2025-08-27T01:36:21.258+0000] {standard_task_runner.py:105} INFO - Job 19: Subtask load_customer_transactions_raw
+[2025-08-27T01:36:21.262+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=817) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-27T01:36:21.262+0000] {standard_task_runner.py:72} INFO - Started process 820 to run task
+[2025-08-27T01:36:21.300+0000] {task_command.py:467} INFO - Running <TaskInstance: customer_metrics.load_customer_transactions_raw scheduled__2025-08-26T00:00:00+00:00 [running]> on host a94bea4a24e8
+[2025-08-27T01:36:21.378+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_metrics' AIRFLOW_CTX_TASK_ID='load_customer_transactions_raw' AIRFLOW_CTX_EXECUTION_DATE='2025-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-26T00:00:00+00:00'
+[2025-08-27T01:36:21.380+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-08-27T01:36:21.392+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:22.729+0000] {airbyte.py:95} INFO - Job 4 was submitted to Airbyte Server
+[2025-08-27T01:36:22.730+0000] {airbyte.py:97} INFO - Waiting for job 4 to complete
+[2025-08-27T01:36:25.772+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:28.941+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:32.039+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:35.062+0000] {base.py:84} INFO - Retrieving connection 'airbyte'
+[2025-08-27T01:36:35.097+0000] {airbyte.py:124} INFO - Job 4 completed successfully
+[2025-08-27T01:36:35.183+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-08-27T01:36:35.185+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=customer_metrics, task_id=load_customer_transactions_raw, run_id=scheduled__2025-08-26T00:00:00+00:00, execution_date=20250826T000000, start_date=20250827T013621, end_date=20250827T013635
+[2025-08-27T01:36:35.352+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-27T01:36:35.385+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
