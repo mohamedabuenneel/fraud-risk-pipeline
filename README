@@ -9,7 +9,7 @@ The goal is to showcase how modern data engineering tools can be combined to bui
 
 ## 🏗️ Architecture
 
-![Pipeline Architecture](/assets/architecture.png)
+![Pipeline Architecture](assets/architecture.png)
 
 **Workflow**
 1. **Data Generation**  
